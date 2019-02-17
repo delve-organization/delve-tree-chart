@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "delve",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss"
@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/assets/delve-tree-chart/",
             "outputPath": "dist/delve-tree-chart",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -29,7 +30,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/leader-line/leader-line.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -127,6 +130,41 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "delve-tree-chart-api": {
+      "root": "projects/delve-tree-chart-api",
+      "sourceRoot": "projects/delve-tree-chart-api/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/delve-tree-chart-api/tsconfig.lib.json",
+            "project": "projects/delve-tree-chart-api/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/delve-tree-chart-api/src/test.ts",
+            "tsConfig": "projects/delve-tree-chart-api/tsconfig.spec.json",
+            "karmaConfig": "projects/delve-tree-chart-api/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/delve-tree-chart-api/tsconfig.lib.json",
+              "projects/delve-tree-chart-api/tsconfig.spec.json"
+            ],
             "exclude": [
               "**/node_modules/**"
             ]

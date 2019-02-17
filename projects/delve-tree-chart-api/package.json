@@ -1,0 +1,11 @@
+{
+  "name": "@delve/tree-chart-api",
+  "version": "0.0.2",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0"
+  },
+  "publishConfig": {
+    "registry": "http://rsptn.ddns.net:4441"
+  }
+}

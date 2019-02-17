@@ -1,0 +1,11 @@
+<pi-tree-chart #tree
+               [datasource]="datasource"
+               [nodeTemplateOutlet]="nodeTemplate"
+               [lineOptions]="lineOptions"
+               [verticalSpace]="75"
+               [levelLimit]="1"
+>
+  <ng-template #nodeTemplate let-context="context" let-component="node">
+      <delve-tree-node [piIframe]="piIframe" [node]="context" [component]="component"></delve-tree-node>
+  </ng-template>
+</pi-tree-chart>

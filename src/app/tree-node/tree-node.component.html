@@ -1,0 +1,20 @@
+<div class="node" [class.visited]="node.visited">
+  <div class="mat-body-strong">id: {{node.id}}</div>
+  <div class="mat-body-strong">{{node.title}}</div>
+  <div class="mat-caption">{{node.description}}</div>
+
+  <div *ngIf="node.imageUrl">
+    <img [src]="node.imageUrl" (load)="imageLoaded()" class="node-image">
+  </div>
+
+  <div *ngIf="node.children && node.children.length > 0">
+    <button mat-icon-button (click)="toggleChildren()">
+      <mat-icon>{{showChildren ? 'remove' : 'add'}}</mat-icon>
+    </button>
+  </div>
+  <div *ngIf="!node.children || node.children.length === 0">
+    <button mat-icon-button (click)="toggleVisitedStatus()">
+      <mat-icon>{{node.visited ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </div>
+</div>

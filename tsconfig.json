@@ -17,6 +17,16 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "delve-tree-chart-api": [
+        "dist/delve-tree-chart-api",
+        "dist/delve-tree-chart-api"
+      ],
+      "delve-tree-chart-api/*": [
+        "dist/delve-tree-chart-api/*",
+        "dist/delve-tree-chart-api/*"
+      ]
+    }
   }
 }

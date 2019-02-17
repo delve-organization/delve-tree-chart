@@ -1,0 +1,25 @@
+@function set-background($color) {
+  @return repeating-linear-gradient(
+      45deg,
+      rgba($color, 0.1),
+      rgba($color, 0.1) 10px,
+      rgba($color, 0.3) 10px,
+      rgba($color, 0.3) 20px
+  );
+}
+
+.node {
+  border: 4px solid green;
+  border-radius: 15px;
+  background: set-background(green);
+  margin: 0 3px;
+
+  &.visited {
+    border: 4px dashed gray;
+    background: set-background(gray);
+  }
+}
+
+.node-image {
+  max-width: 100%;
+}
