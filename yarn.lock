@@ -293,9 +293,9 @@
     tree-kill "1.2.0"
     webpack-sources "1.2.0"
 
-"@ping/pi-iframe@0.0.1":
-  version "0.0.1"
-  resolved "http://rsptn.ddns.net:4441/@ping%2fpi-iframe/-/pi-iframe-0.0.1.tgz#210b5e274a47417496baf3ce048a30c5301b4a45"
+"@ping/pi-iframe@0.0.8":
+  version "0.0.8"
+  resolved "http://rsptn.ddns.net:4441/@ping%2fpi-iframe/-/pi-iframe-0.0.8.tgz#d3a7ca9bcc648ad7e3c36f5a899fc58623ec88ca"
   dependencies:
     tslib "^1.9.0"
 
@@ -306,9 +306,9 @@
     leader-line "^1.0.5"
     tslib "^1.9.0"
 
-"@ping/pi-tree-chart@0.0.4":
-  version "0.0.4"
-  resolved "http://rsptn.ddns.net:4441/@ping%2fpi-tree-chart/-/pi-tree-chart-0.0.4.tgz#f13448a8728d847d2405be6bc186bfcf5bec54b2"
+"@ping/pi-tree-chart@0.0.5":
+  version "0.0.5"
+  resolved "http://rsptn.ddns.net:4441/@ping%2fpi-tree-chart/-/pi-tree-chart-0.0.5.tgz#67ed27de838c1e1402b64ead75d2baed42f61f6d"
   dependencies:
     "@ping/pi-leader-line" "0.0.1"
     tslib "^1.9.0"
