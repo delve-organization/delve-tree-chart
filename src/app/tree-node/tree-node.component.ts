@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { Node } from '../node';
 import { PiTreeChartNodeComponent } from '@ping/pi-tree-chart';
-import { UserNodeRelationData, USER_NODE_RELATION_DATA_CHANGE_KEY } from 'projects/delve-tree-chart-api/src/public_api';
+import { UserNodeRelationData, USER_NODE_RELATION_DATA_CHANGE_KEY, AppMode, SelectedNodeData, SELECTED_NODE_DATA_KEY } from 'projects/delve-tree-chart-api/src/public_api';
 import { PiIframeComponent } from '@ping/pi-iframe';
 
 @Component({
@@ -14,6 +14,7 @@ export class TreeNodeComponent implements OnInit, AfterViewInit {
   @Input() piIframe: PiIframeComponent;
   @Input() node: Node;
   @Input() component: PiTreeChartNodeComponent;
+  @Input() appMode: AppMode;
 
   showChildren: boolean;
 
@@ -41,6 +42,13 @@ export class TreeNodeComponent implements OnInit, AfterViewInit {
     this.piIframe.post<UserNodeRelationData>(USER_NODE_RELATION_DATA_CHANGE_KEY, {
       nodeId: this.node.id,
       visited: !this.node.visited
+    });
+  }
+
+  selectNode(): void {
+    this.piIframe.post<SelectedNodeData>(SELECTED_NODE_DATA_KEY, {
+      nodeId: this.node.id,
+      title: this.node.title
     });
   }
 

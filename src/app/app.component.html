@@ -1,5 +1,5 @@
 <pi-iframe #piIframe>
     <div class="tree-container">
-        <delve-tree *ngIf="node && relations" class="tree-view" [piIframe]="piIframe" [nodeData]="node" [relationsData]="relations"></delve-tree>
+        <delve-tree *ngIf="node && relations && appMode" class="tree-view" [piIframe]="piIframe" [nodeData]="node" [relationsData]="relations" [appMode]="appMode"></delve-tree>
     </div>
 </pi-iframe>

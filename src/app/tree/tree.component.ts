@@ -2,7 +2,7 @@ import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { Node } from '../node';
 import { PiLeaderLineOptions, PiLeaderLinePath, PiLeaderLineSocket } from '@ping/pi-leader-line';
 import { PiTreeChartComponent } from '@ping/pi-tree-chart';
-import { NodeData, UserNodeRelationData } from 'projects/delve-tree-chart-api/src/public_api';
+import { NodeData, UserNodeRelationData, AppMode } from 'projects/delve-tree-chart-api/src/public_api';
 import { PiIframeComponent } from '@ping/pi-iframe';
 
 @Component({
@@ -15,6 +15,7 @@ export class TreeComponent implements OnInit {
   @Input() piIframe: PiIframeComponent;
   @Input() nodeData: NodeData;
   @Input() relationsData: UserNodeRelationData[];
+  @Input() appMode: AppMode;
 
   @ViewChild('tree', { read: PiTreeChartComponent }) tree: PiTreeChartComponent;
 

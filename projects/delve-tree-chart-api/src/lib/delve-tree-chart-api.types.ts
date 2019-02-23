@@ -10,3 +10,13 @@ export interface UserNodeRelationData {
   nodeId: number;
   visited: boolean;
 }
+
+export interface SelectedNodeData {
+  nodeId: number;
+  title: string;
+}
+
+export class AppMode {
+  static NORMAL = 'NORMAL';
+  static SELECTOR = 'SELECTOR';
+}

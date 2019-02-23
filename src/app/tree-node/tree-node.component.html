@@ -7,14 +7,21 @@
     <img [src]="node.imageUrl" (load)="imageLoaded()" class="node-image">
   </div>
 
-  <div *ngIf="node.children && node.children.length > 0">
+  <div *ngIf="node.children && node.children.length > 0" class="bottom-button">
     <button mat-icon-button (click)="toggleChildren()">
       <mat-icon>{{showChildren ? 'remove' : 'add'}}</mat-icon>
     </button>
   </div>
-  <div *ngIf="!node.children || node.children.length === 0">
-    <button mat-icon-button (click)="toggleVisitedStatus()">
-      <mat-icon>{{node.visited ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
+  <div [ngSwitch]="appMode" class="bottom-button">
+    <div *ngSwitchCase="'NORMAL'">
+      <button *ngIf="!node.children || node.children.length === 0" mat-icon-button (click)="toggleVisitedStatus()">
+        <mat-icon>{{node.visited ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </div>
+    <div *ngSwitchCase="'SELECTOR'">
+      <button mat-icon-button>
+        <mat-icon>touch_app</mat-icon>
+      </button>
+    </div>
   </div>
 </div>

@@ -6,6 +6,6 @@
                [levelLimit]="1"
 >
   <ng-template #nodeTemplate let-context="context" let-component="node">
-      <delve-tree-node [piIframe]="piIframe" [node]="context" [component]="component"></delve-tree-node>
+      <delve-tree-node [piIframe]="piIframe" [node]="context" [component]="component" [appMode]="appMode"></delve-tree-node>
   </ng-template>
 </pi-tree-chart>
